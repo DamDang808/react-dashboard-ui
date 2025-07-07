@@ -1,11 +1,15 @@
+import React from "react";
 
-export const Button = ({ children, className = '', ...props }) => {
+export const Button = ({ children, onClick, disabled, size = "md" }) => {
+  const sizeClass = size === "sm" ? "btn-sm" : "btn-md";
   return (
     <button
-      className={`bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded ${className}`}
-      {...props}
+      onClick={onClick}
+      disabled={disabled}
+      className={`btn btn-primary ${sizeClass}`}
     >
       {children}
     </button>
   );
 };
+

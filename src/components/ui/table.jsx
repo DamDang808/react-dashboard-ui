@@ -1,19 +1,27 @@
-export const Table = ({ children }) => (
-  <table className="w-full border-collapse">{children}</table>
-);
+import React from "react";
 
-export const TableHeader = ({ children, className }) => (
-  <thead className={className}>{children}</thead>
-);
+export const Table = ({ children }) => {
+  return (
+    <div className="table-responsive">
+      <table className="table table-bordered table-hover">
+        {children}
+      </table>
+    </div>
+  );
+};
 
-export const TableBody = ({ children }) => <tbody>{children}</tbody>;
+export const TableHeader = ({ children, className = "" }) => {
+  return <thead className={className}>{children}</thead>;
+};
 
-export const TableRow = ({ children, className }) => (
-  <tr className={className}>{children}</tr>
-);
+export const TableBody = ({ children }) => {
+  return <tbody>{children}</tbody>;
+};
 
-export const TableCell = ({ children, className, ...props }) => (
-  <td className={`border px-2 py-1 text-sm ${className}`} {...props}>
-    {children}
-  </td>
-);
+export const TableRow = ({ children, className = "" }) => {
+  return <tr className={className}>{children}</tr>;
+};
+
+export const TableCell = ({ children, className = "" }) => {
+  return <td className={className}>{children}</td>;
+};

@@ -1,8 +1,13 @@
-export const Checkbox = ({ checked, onCheckedChange, disabled }) => (
-  <input
-    type="checkbox"
-    checked={checked}
-    onChange={(e) => onCheckedChange(e.target.checked)}
-    disabled={disabled}
-  />
-);
+import React from "react";
+
+export const Checkbox = ({ checked, onCheckedChange, disabled }) => {
+  return (
+    <input
+      type="checkbox"
+      checked={checked}
+      onChange={onCheckedChange}
+      disabled={disabled}
+      className="form-check-input"
+    />
+  );
+};
